@@ -12,11 +12,23 @@ const eslintConfig = [
       'next/typescript',
       'plugin:@stylistic/recommended-extends',
     ],
-    // plugins: [
-    //   '@stylistic',
-    // ],
+    plugins: [
+      '@stylistic',
+    ],
     rules: {
+      /* Stylistic */
       '@stylistic/semi': ['error', 'always'],
+      '@stylistic/member-delimiter-style': ['error', {
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: false,
+        },
+        multilineDetection: 'brackets',
+      }],
     },
   }),
 ];
